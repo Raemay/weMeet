@@ -1,7 +1,10 @@
 import { FontAwesome, FontAwesome5 } from "@expo/vector-icons";
 import { View, StyleSheet, Text, Pressable, Image } from "react-native";
 
-export default function Travelers() {
+export default function Travelers({navigation}) {
+  const navigateToResults = () => {
+    navigation.navigate("Results");
+  };
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Who is traveling ?</Text>
@@ -67,7 +70,7 @@ export default function Travelers() {
           style={styles.next}
           name="arrow-right"
           backgroundColor="#3CB371"
-          onPress={""}
+          onPress={navigateToResults}
         >
           Next
         </FontAwesome.Button>
