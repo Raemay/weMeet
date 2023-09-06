@@ -35,7 +35,7 @@ export default function Travelers({navigation}) {
           size={100}
         ></FontAwesome.Button>
       </View>
-      <Text style={styles.title2}>Enfants</Text>
+      <Text style={styles.title2}>Children</Text>
       <View style={{ flexDirection: "row", marginHorizontal: 70 }}>
         <FontAwesome.Button
           name="child"
@@ -56,7 +56,7 @@ export default function Travelers({navigation}) {
           size={75}
         ></FontAwesome.Button>
       </View>
-      <Text style={styles.title2}>Toutou</Text>
+      <Text style={styles.title2}>Doggy</Text>
       <View style={{ flexDirection: "row", marginHorizontal: 145 }}>
         <FontAwesome5.Button
           name="dog"
