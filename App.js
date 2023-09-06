@@ -4,6 +4,7 @@ import TabBar from "./frontend/src/components/TabBar";
 import { createStackNavigator } from "@react-navigation/stack";
 import Hobby from "./frontend/src/pages/Hobby";
 import Travelers from "./frontend/src/pages/Travelers";
+import Results from "./frontend/src/pages/Results";
 
 const Stack = createStackNavigator();
 
@@ -18,6 +19,7 @@ export default function App() {
         />
         <Stack.Screen name="Hobby" component={Hobby} />
         <Stack.Screen name="Travelers" component={Travelers} />
+        <Stack.Screen name="Results" component={Results} />
       </Stack.Navigator>
     </NavigationContainer>
   );
