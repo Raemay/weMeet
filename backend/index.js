@@ -1,22 +1,27 @@
 require("dotenv").config();
-const mysql = require('mysql2/promise'); // Utilisez mysql2/promise pour une utilisation asynchrone
+const mysql = require("mysql2/promise"); // Utilisez mysql2/promise pour une utilisation asynchrone
 
-const dbConfig = {
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
-};
+const database = mysql.createPool({
+  host: "db",
+  port: 3306,
+  user: "wemeet",
+  password: "wemeet",
+  database: "wemeet",
+});
+
+database
+  .getConnection()
+  .then(() => {
+    console.log("can reach database");
+  })
+  .catch((err) => {
+    console.error(err);
+  });
 
 const app = require("./src/app");
-
-const port = parseInt(process.env.APP_PORT ?? "5000", 10);
-
-app.listen(port, (err) => {
-  if (err) {
-    console.error("Something bad happened");
-  } else {
-    // eslint-disable-next-line no-restricted-syntax
-    console.log(`Server is listening on ${port}`);
-  }
+const port = 5000;
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
 });
+
+module.exports = database;
